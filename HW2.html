@@ -554,7 +554,6 @@
             <br>
         </div>
 
-        <div id="errorCount"></div>
         </div>
 
         <script>
@@ -646,8 +645,6 @@
                     else {
                         cell.style.backgroundColor = cellColorName_Incorrect;
                         userErrorsCount++;
-                        var errorCountDiv = document.getElementById('errorCount');
-                        errorCountDiv.innerText = 'Total Errors: ' + userErrorsCount.toString();
                     }
                 }
             }
@@ -720,9 +717,12 @@
                     bitMask += bitMask;
                 }
 
+                var generationZeroPattern = 0x4000744;
                 for (index = 0; index < 32; index++) {        // set each element of the 0th generation to zero (but one)
                     generationCellId = "generationCell_0_" + index.toString();
-                    setCell(generationCellId, (index == 15));  // middle one is set to one
+                    var cellValue = generationZeroPattern & 0x80000000;
+                    generationZeroPattern = generationZeroPattern << 1;
+                    setCell(generationCellId, cellValue);
                 }
 
                 for (generationIndex = 1; generationIndex < GENERATION_COUNT; generationIndex++) {
