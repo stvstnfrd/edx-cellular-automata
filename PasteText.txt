@@ -9,7 +9,7 @@ def pythongrader(e, ans):
   '''
   par = json.loads(ans)
   # We can use either the value of the answer key to grade
-
+  
   par = json.loads(ans)
   # We can use either the value of the answer key to grade
   answer = json.loads(par["answer"])
@@ -20,14 +20,14 @@ def pythongrader(e, ans):
   </script>
 
   HTML goes here.
-
-
+  
+  
 <customresponse cfn="pythongrader">
   <jsinput gradefn="HW.getGrade"
     get_statefn="HW.getState"
     set_statefn="HW.setState"
-    width="780"
-    height="780"
+    width="800"
+    height="600"
     html_file="/static/HW2.html"
     sop="false"/>
 </customresponse>
