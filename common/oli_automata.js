@@ -4,6 +4,8 @@ var state = {
     'genarray': new Array()
 };
 
+var startingState;
+
 var HW = (function () {
 
     var channel;
@@ -274,5 +276,6 @@ function calculateGenerationMemberValue(memberIndex) {
 $(document).ready(function() {
     establishRule(0xB6);
     activateGeneration(1);
-    var startingState=HW.getState();
+    startingState=HW.getState();
+    alert(startingState);
 });
