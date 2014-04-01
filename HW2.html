@@ -11,6 +11,7 @@
                 'completed': false,
                 'genarray': new Array()
             };
+
             var HW = (function () {
 
                 var channel;
@@ -57,7 +58,9 @@
                     setState: setState,
                     getGrade: getGrade
                 };
+
             }());
+            
 
         </script>
 
@@ -232,7 +235,7 @@
             <button hidden id="button_check_1" onclick="checkGeneration()">Check</button>
             <br>
             <button id="button_auto_1" onclick="autoGeneration()">Show Answer</button>
-            <button id="button_auto_1" onclick="init()">Reset</button>
+            <button id="button_auto_1" onclick="HW.setState(0,startingState)">Reset</button>
             <br>
         </div>
 
@@ -780,6 +783,8 @@
 
             establishRule(0xB6);
             activateGeneration(1);
+            var startingState=HW.getState();
+                    
         </script>
 
         <style>
