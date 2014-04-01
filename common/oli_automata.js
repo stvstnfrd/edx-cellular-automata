@@ -277,5 +277,4 @@ $(document).ready(function() {
     establishRule(0xB6);
     activateGeneration(1);
     startingState=HW.getState();
-    alert(startingState);
 });
