@@ -8,14 +8,22 @@ This repo holds the artifacts produced during our two day effort. Although the m
 
 Creating a JSInput problem within your own course using the files found here requires only a few simple steps. (Creating an XBlocks version is a bit more involved so it won't be addressed here.)
 
-* **Get Copies of the Files** The files you will need to copy are really only these four (all found in the 'common' folder):
+* **Get copies of the files** The files you will need to copy are really only these four (all found in the 'common' folder):
     - jschannel.js
     - oli_automata.css
     - oli_automata.html
     - oli_automata.js
 
-* **Add Those Files to Your Course** Go to the 'Content' dropdown in Studio and select 'Files and Uploads.' Click the green button in the upper right corner to upload files. Click the blue 'Choose File' button to get to a file manager dialog. Select the four files in the 'common' folder (using the shift key to select all four at once) and click 'Open' to start the upload process.
+* **Add those files to your course** Go to the 'Content' dropdown in Studio and select 'Files and Uploads.' Click the green button in the upper right corner to upload files. Click the blue 'Choose File' button to get to a file manager dialog. Select the four files in the 'common' folder (using the shift key to select all four at once) and click 'Open' to start the upload process.
 
-* **
+* **Copy the bit of "glue" code into the 'Edit' box in Studio**  In the 'JSInput' folder is a file called 'PasteText.txt' where a bit of javascript/python code will be found. Open that file in a text editor and copy the text to the clipboard. Go back to your new JSInput problem in Studio and open the Edit dialog box. Discard all the text you find there (it was automatically supplied when you originally created the new problem), replacing it with the code on the clipboard.
+
+#Try the New Problem
+
+All the pieces are in place now to try your new problem. Click on the 'Preview' button to see the cellular automata problem running.
+
+
+
+
 
 
