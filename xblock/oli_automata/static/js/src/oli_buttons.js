@@ -1,19 +1,30 @@
 
-$(document).ready(function () {
+function OLIAutomataXBlock(runtime, element) {
 
-    $("#oli_automata_save").click(function () {
+    $("#oli_automata_save").click(function (eventObject) {
         $.ajax({
-            url: "save_state",
-            context: HW.getState()
+            type: "POST",
+            url: runtime.handlerUrl(element, 'save_state'),
+            data: HW.getState()
         });
     });
 
-    $("#oli_automata_grade").click(function () {
+    $("#oli_automata_grade").click(function (eventObject) {
         $.ajax({
-            url: "grade",
-            context: HW.getGrade()
+            type: "POST",
+            url: runtime.handlerUrl(element, 'grade'),
+            data: HW.getGrade()
         });
     });
 
-});
-
+    $(function ($) {
+        /* On Page Load */
+        $.ajax({
+            url: runtime.handlerUrl(element, 'load_state'),
+            success: function (data, textStatus, jqXHR) {
+                console.log("resetting state", data)
+                HW.setState(0, data);
+            }
+        });
+    });
+}

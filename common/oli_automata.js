@@ -25,10 +25,19 @@ var HW = (function () {
         checkGeneration();
         state.errors = userErrorsCount;
         state.completed = true;
+        /* grading should also save genarray, so do that here too */
+        /* TODO: refactor this out of getGrade and getState() */
+        for (index = 0; index < GENERATION_MEMBER_COUNT; index++) {
+            var activeGenerationMemberId = getGenerationMemberId(index, usersGenerationIndex);
+            var cell = document.getElementById(activeGenerationMemberId);
+            state.genarray[index] = cell.style.backgroundColor;
+        }
         return JSON.stringify(state);
     }
 
     function getState() {
+        state.errors = 0;
+        state.completed = false;
         for (index = 0; index < GENERATION_MEMBER_COUNT; index++) {
             var activeGenerationMemberId = getGenerationMemberId(index, usersGenerationIndex);
             var cell = document.getElementById(activeGenerationMemberId);
