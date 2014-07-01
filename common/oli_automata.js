@@ -21,6 +21,7 @@ var HW = (function () {
     }
 
     function getGrade() {
+        var index;
         userErrorsCount = 0;
         checkGeneration();
         state.errors = userErrorsCount;
@@ -36,6 +37,7 @@ var HW = (function () {
     }
 
     function getState() {
+        var index;
         state.errors = 0;
         state.completed = false;
         for (index = 0; index < GENERATION_MEMBER_COUNT; index++) {
@@ -47,6 +49,7 @@ var HW = (function () {
     }
 
     function setState() {
+        var index;
         state = JSON.parse(arguments[1]);
         for (index = 0; index < GENERATION_MEMBER_COUNT; index++) {
             var cellColor = state.genarray[index];
@@ -81,6 +84,7 @@ var GENERATION_COUNT = 10;
 //____________________________________________________________________________
 // automatically set the correct values for the specified generation
 function autoGeneration() {
+    var index;
     for (index = 0; index < GENERATION_MEMBER_COUNT; index++) {
         var generationMemberValue = calculateGenerationMemberValue(index)
         var activeGenerationMemberId = getGenerationMemberId(index, usersGenerationIndex);
@@ -114,6 +118,7 @@ function activateGeneration(generationIndex) {
 //____________________________________________________________________________
 // given the index of a generation to check, test that new generation for correctness
 function checkGeneration() {
+    var index;
     for (index = 0; index < GENERATION_MEMBER_COUNT; index++) {
         var expectedValue = calculateGenerationMemberValue(index)
         var activeGenerationMemberId = getGenerationMemberId(index, usersGenerationIndex);
@@ -218,6 +223,7 @@ function zeroPadHex(num, places) {
 function establishRule(ruleNumber) {
     var bitMask = 0x01;
     var generationCellId;
+    var index;
 
     for (index = 0; index < 8; index++) {        // set each element of the rule block
         setRuleElement(index, ruleNumber & bitMask);
