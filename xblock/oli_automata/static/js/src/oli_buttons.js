@@ -16,7 +16,7 @@ function OLIAutomataXBlock(runtime, element) {
             data: HW.getGrade(),
             success: function (data) {
                 if (data.completed && !data.errors) {
-                    console.log('correct');
+                    console.log('grade', data));
                 }
             },
         });
@@ -26,8 +26,8 @@ function OLIAutomataXBlock(runtime, element) {
         /* On Page Load */
         $.ajax({
             url: runtime.handlerUrl(element, 'load_state'),
-            success: function (data, textStatus, jqXHR) {
-                console.log("resetting state", data)
+            success: function (data) {
+                console.log("load_state", data)
                 HW.setState(0, data);
             }
         });
