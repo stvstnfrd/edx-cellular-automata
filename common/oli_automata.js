@@ -152,7 +152,7 @@ function setCellCorrect(id, correct) {
     var cell = document.getElementById(id);
     if (cell != null) {
         if (correct) {
-            //cell.style.backgroundColor = cellColorName_Correct;
+            cell.style.backgroundColor = cellColorName_Correct;
         }
         else {
             cell.style.backgroundColor = cellColorName_Incorrect;
