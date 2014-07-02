@@ -23,7 +23,6 @@ function OLIAutomataXBlock(runtime, element) {
     });
 
     $(function ($) {
-        /* On Page Load */
         $.ajax({
             url: runtime.handlerUrl(element, 'load_state'),
             success: function (data) {
