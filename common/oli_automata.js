@@ -293,3 +293,4 @@ $(document).ready(function() {
     activateGeneration(1);
     startingState=HW.getState();
 });
+

@@ -1,6 +1,4 @@
-
 function OLIAutomataXBlock(runtime, element) {
-
     $("#oli_automata_save").click(function (eventObject) {
         $.ajax({
             type: "POST",
@@ -32,3 +30,4 @@ function OLIAutomataXBlock(runtime, element) {
         });
     });
 }
+
