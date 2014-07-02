@@ -102,10 +102,10 @@ class OLIAutomataXBlock(LmsCompatibilityMixin, XBlock):
         self.unpack_datadict_save(data)
         if "errors" not in data:
             return
-        if "complete" not in data:
+        if "completed" not in data:
             return
         grade = 0
-        if data['complete'] == True and data['error'] == 0:
+        if data['completed'] == True and data['errors'] == 0:
             grade = 1
         self.runtime.publish(
             self,
