@@ -115,7 +115,12 @@ class OLIAutomataXBlock(LmsCompatibilityMixin, XBlock):
                 'max_value': self.weight
             }
         )
-        return Response(status=200)
+        response_data =  {
+            "completed": self.completed,
+            "errors": self.errors,
+            "genarray": self.genarray,
+        }
+        return response_data
 
     # TO-DO: change this to create the scenarios you'd like to see in the
     # workbench while developing your XBlock.

@@ -13,7 +13,12 @@ function OLIAutomataXBlock(runtime, element) {
         $.ajax({
             type: "POST",
             url: runtime.handlerUrl(element, 'grade'),
-            data: HW.getGrade()
+            data: HW.getGrade(),
+            success: function (data) {
+                if (data.completed && !data.errors) {
+                    console.log('correct');
+                }
+            },
         });
     });
 
